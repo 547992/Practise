@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Wish to challenge the Tax bracket – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div id="event-name-hint" class="govuk-hint">
+        5.Enter your reason for changing tax bracket.
+      </div>
+
+      <form class="form" action="my-question-6" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Why do you wish to challenge the Tax bracket?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="Challengetax" type="radio" value="I have become the taxpayer for the property within the last six months.">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  I have become the taxpayer for the property within the last six months.
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="Challengetax" type="radio" value="The property is no longer available.">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                  The property is no longer available.
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-3" name="Challengetax" type="radio" value="The property should be included in the tax list">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                  The property should be included in the tax list
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-4" name="Challengetax" type="radio" value="Other">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                  Other
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

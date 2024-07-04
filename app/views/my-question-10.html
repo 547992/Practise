@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Evidences for the disputed property – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div id="event-name-hint" class="govuk-hint">
+        10.Add evidences for the disputed property.
+      </div>
+
+      <form class="form" action="/my-question-11" method="post">
+
+        <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="1000" data-threshold="85">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="threshold">
+              Provide details of evidences?
+            </label>
+          </h1>
+          <textarea class="govuk-textarea govuk-js-character-count" id="threshold" name="threshold" rows="5" aria-describedby="threshold-info"></textarea>
+          <div id="threshold-info" class="govuk-hint govuk-character-count__message">
+            You can enter up to 1000 characters
+          </div>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="file-upload-1">
+            Upload photos of evidences (Optional)
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

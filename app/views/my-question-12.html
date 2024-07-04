@@ -1,0 +1,176 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      
+
+      <form class="form" action="/final-confirmation" method="post">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <h1 class="govuk-heading-l">Please check your answers before submitting your application.</h1>
+              <h2 class="govuk-heading-m">Personal details</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['eventName'] }}
+
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-1.html">Change<span class="govuk-visually-hidden"> name</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['dob-day'] }}- {{ data['dob-month'] }}- {{ data['dob-year'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-2.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Email
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['emailName'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-3.html">Change<span class="govuk-visually-hidden"> Email</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Mobile Number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['telephoneNumber'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-4.html">Change<span class="govuk-visually-hidden"> Mobile Number.</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Reason to challenge the Tax bracket.
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">{{ data['Challengetax'] }}</p>
+                
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-5.html">Change<span class="govuk-visually-hidden">  Reason to challenge the Tax bracket.</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Type of Property
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['propertype'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-6.html">Change<span class="govuk-visually-hidden"> Type of Property</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['addressLine1'] }}<br>{{ data['addressLine2'] }}<br>{{ data['address-town'] }}<br>{{ data['address-county'] }}<br>{{ data['addressPostcode'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-7.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    More details
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">{{ data['threshold1'] }}</p>
+                
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-8.html">Change<span class="govuk-visually-hidden">  More Details</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Room Details
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">Living Room - {{ data['width2liv'] }}</p>
+                    <p class="govuk-body">Bedroom - {{ data['width2bed'] }}</p>
+                    <p class="govuk-body">Kitchen - {{ data['width2kit'] }}</p>
+                    <p class="govuk-body">Garage Room - {{ data['width2gr'] }}</p>
+                    <p class="govuk-body">Utility Room - {{ data['width2ur'] }}</p>
+                    <p class="govuk-body">Conservatory - {{ data['width2co'] }}</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-9.html">Change<span class="govuk-visually-hidden"> Room details</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Evidences
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">{{ data['threshold'] }}</p>
+                    <p class="govuk-body">Living Room.jpg</p>
+                
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-10.html">Change<span class="govuk-visually-hidden">  Evidences</span></a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Current monthly tax range
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['whereDoYouLive'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="my-question-11.html">Change<span class="govuk-visually-hidden"> Current monthly tax range</span></a>
+                  </dd>
+                </div>
+              </dl>
+            
+              </div>
+            </div>
+          </main>
+       
+
+        {{ govukButton({
+          text: "Submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

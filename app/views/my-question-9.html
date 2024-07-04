@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Room Details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div id="event-name-hint" class="govuk-hint">
+        9.Enter your room details.
+      </div>
+
+      <form class="form" action="/my-question-10" method="post">
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Please enter the number of below listed rooms in your property?
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Living Room
+            </label>
+           
+            <input class="govuk-input govuk-input--width-2" id="width-2" name="width2liv" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-2">
+              Bedroom
+            </label>
+            <input class="govuk-input govuk-input--width-2" id="width-2" name="width2bed" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-town">
+              Kitchen
+            </label>
+            <input class="govuk-input govuk-input--width-2" id="width-2" name="width2kit" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-county">
+              Garage Room
+            </label>
+            <input class="govuk-input govuk-input--width-2" id="width-2" name="width2gr" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+             Utility Room
+            </label>
+            <input class="govuk-input govuk-input--width-2" id="width-2" name="width2ur" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Conservatory
+            </label>
+            <input class="govuk-input govuk-input--width-2" id="width-2" name="width2co" type="text">
+          </div>
+         
+        </fieldset>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
